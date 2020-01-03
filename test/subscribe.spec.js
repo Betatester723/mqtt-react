@@ -46,7 +46,7 @@ describe('Subscribe', (test) => {
         );
         stub.publish(demoTopic, demoMessage);
         const data = mounted.first().prop('data');
-        t.true(data[0] === demoMessage);
+        t.true(data["demoTopic"] === demoMessage);
     });
 
     test('receives JSON data and parses it', (t) => {
@@ -58,8 +58,8 @@ describe('Subscribe', (test) => {
         );
         stub.publish(demoTopic, JSON.stringify(demoMessage));
         const data = mounted.first().prop('data');
-        t.truthy(data[0]);
-        t.true(data[0].value === demoMessage.value);
+        t.truthy(data[["demoTopic"]);
+        t.true(data[["demoTopic"].value === demoMessage.value);
     })
 
 
